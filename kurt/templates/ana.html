@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portföy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav main-nav">
+            <ul class="main-nav__list main-list">
+                <li class="main-list__item list-item">
+                    <a class="list-item__link" href="#home">HOME</a>
+                </li>
+                <li class="main-list__item list-item">
+                    <a class="list-item__link" href="#about">HAKKIMDA</a>
+                </li>
+                <li class="main-list__item list-item">
+                    <a class="list-item__link" href="#skills">SKILLS</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="main__home home" id="home">
+            <h1 class="home__title">Erakman136</h1>
+            <p class="home__subtitle">WEB DEVELOPER</p>
+        </section>
+        
+        <section class="main__about about" id="about">
+            <h2 class="about__title">HAKKIMDA</h2>
+            <div class="about__info info-block">
+                <p class="info-block__text">Merhaba ben Emirhan yazılım işiyle uğraşıyorum. 13 Yaşındayım. Hem web developer olarak web sitesi hem yapay zeka hemde oyun kodlama yapabiliyorum. Hobilerim ise Aikido ve yüzme </p>
+                <img class="info-block__img" src="{{ url_for('static', filename='img/profile.png') }}" alt="me" width="250" height="250">
+            </div>
+        </section>
+
+        <section class="main__skills skills" id="skills">
+            <h2 class="skills__title">Bazı projeler</h2>
+            <form action="/" method="POST">
+                <ul class="skills__list skills-list">
+                    <li class="skills-list__skill skill">
+        <img class="skill__img" src="{{ url_for('static', filename='img/mleh.png') }}" alt="python" width="150" height="150">
+        <span class="skill__info">TELAFFUZ OYUNU</span>
+        <form action="/#skills" method="get">
+            <input class="skill__button" type="submit" name="button_mleh" value="SHOW PROJECT">
+        </form>
+    </li>
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="{{ url_for('static', filename='img/Kronometre.png') }}" alt="python" width="150" height="150">
+                        <span class="skill__info">KRONOMETRE</span>
+                        <input class="skill__button" type="submit" name="button_python" value="SHOW PROJECT">
+                    </li>
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="{{ url_for('static', filename='img/python-project.png') }}" alt="kurt" width="150" height="150">
+                        <span class="skill__info">Enerji PROJESİ</span>
+                        <input class="skill__button" type="submit" name="button_kurt" value="SHOW PROJECT">
+                    </li>
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="{{ url_for('static', filename='img/bot.png') }}" alt="discord" width="150" height="150">
+                        <span class="skill__info">DISCORD BOT</span>
+                        <input class="skill__button" type="submit" name="button_discord" value="SHOW PROJECT">
+                    </li>
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="{{ url_for('static', filename='img/mem-projesi.png') }}" alt="html" width="150" height="150">
+                        <span class="skill__info">MEM PROJESİ</span>
+                        <input class="skill__button" type="submit" name="button_html" value="SHOW PROJECT">
+                    </li>
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="{{ url_for('static', filename='img/notped.png') }}" alt="SQL" width="150" height="150">
+                        <span class="skill__info">NOTPED</span>
+                        <input class="skill__button" type="submit" name="button_db" value="SHOW PROJECT">
+                    </li>
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="{{ url_for('static', filename='img/oyun.png') }}" alt="new" width="150" height="150">
+                        <span class="skill__info">OYUN PROJESİ</span>
+                        <input class="skill__button" type="submit" name="button_extra" value="SHOW PROJECT">
+                    </li>
+                    <!-- Yeni buton -->
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="{{ url_for('static', filename='img/hesap.png') }}" alt="new-project" width="150" height="150">
+                        <span class="skill__info">HESAP MAKİNESİ PROJESİ</span>
+                        <input class="skill__button" type="submit" name="button_new_project" value="SHOW PROJECT">
+                    </li>
+                    <li class="skills-list__skill skill">
+                        <img class="skill__img" src="../static/img/best.png" alt="new-project" width="150" height="150">
+                        <span class="skill__info">ANKET PROJESİ</span>
+                        <input class="skill__button" type="submit" name="button_dene" value="SHOW PROJECT">
+                    </li>
+                </ul>
+            </form>
+
+            {% if button_python %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/Kronometre.png') }}" alt="project" width="500">
+                <a class="project__link" href="/kronometre">Projeyi aç</a>
+                <a class="project__link" href="https://github.com/Erakman136/kronometre">GitHub'da kodları aç</a>
+            </div>
+            {% elif button_kurt %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/python-project.png') }}" alt="project" width="500">
+                <a class="project__link" href="https://github.com/Erakman136/enerji-projesi">GitHub'da kodları aç</a>
+            </div>
+            {% elif button_mleh %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/mleh.png') }}" alt="project" width="500">
+                <a class="project__link" href="https://github.com/Erakman136/telaffuz-oyunu">GitHub'da kodları aç</a>
+                <a class="project__link" href="/pronunciation_game">Projeyi aç</a>
+            </div>
+            {% elif button_discord %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/bot.png') }}" alt="project" width="500">
+                <a class="project__link" href="https://discord.gg/hBJqau4t">Discord'da Aç</a>
+                <a class="project__link" href="https://github.com/Erakman136/discord-bot-projesi">Github'da Kodları Aç</a>
+            </div>
+            {% elif button_html %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/mem-projesi.png') }}" alt="project" width="500">
+                <a class="project__link" href="https://github.com/Erakman136/mem">GitHub'da Kodları aç</a>
+            </div>
+            {% elif button_db %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/notped.png') }}" alt="project" width="500">
+                <a class="project__link" href="https://erakman136.pythonanywhere.com/">Projeyi aç</a>
+                <a class="project__link" href="https://github.com/Erakman136/not-defteri-projesi">GitHub'da Kodları aç</a>
+            </div>
+            {% elif button_extra %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/oyun.png') }}" alt="new project" width="500">
+                <a class="project__link" href="https://github.com/Erakman136/oyun">GitHub'da Kodları aç</a>
+                <a class="project__link" href="https://hub.kodland.org/project/236282">Projeyi aç</a>
+            </div>
+            {% elif button_new_project %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="{{ url_for('static', filename='img/hesap.png') }}" alt="new project" width="500">
+                <a class="project__link" href="https://github.com/Erakman136/Hesap-Makinesi">GitHub'da Kodları aç</a>
+                <a class="project__link" href="/hesap">Projeyi aç</a>
+            </div>
+            {% elif button_dene %}
+            <div class="skills__project project" id="project">
+                <img class="project__img" src="../static/img/best.png" alt="new project" width="500">
+                <a class="project__link" href="https://github.com/Erakman136/Anket-Projesi">GitHub'da Kodları aç</a>
+                <a class="project__link" href="/anket">Projeyi aç</a>
+            </div>
+            {% endif %}
+        </section>
+        <!-- Geri bildirim formu -->
+        <section class="main__feedback feedback" id="feedback">
+            <h2 class="feedback__title">Proje Önerilerinizi Yazın</h2>
+            <form action="/sendfeedback" method="POST" class="feedback__form form">
+                <label for="email">
+                    <input type="email" class="form__input" name="email" id="email" placeholder=" Lütfen E-Mail'inizi girin." required>
+                </label>
+                <label for="text">
+                    <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Proje önerisi yapmak için formu doldurun. İlginiz için çok teşekkür ederim."></textarea>
+                </label>
+                <button class="form__button" type="submit">SEND</button>
+            </form>
+        </section>
+    </main>
+    <!-- Sosyal medya bağlantıları için bir alt bilgi -->
+    <footer>
+    </footer>
+    </body>
+    </html>

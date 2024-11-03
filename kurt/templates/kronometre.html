@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kronometre</title>
+    <!-- styles.css dosyasını css klasöründen doğru şekilde bağlama -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kronometre</h1>
+        <div id="display">00:00:00</div>
+        <div class="buttons">
+            <button id="startStop">BAŞLA</button>
+            <button id="reset">SIFIRLA</button> 
+            <!-- Ana Sayfa butonu -->
+            <a href="/" id="homeButton"><button>ANA SAYFA</button></a>
+        </div>
+    </div>
+    <!-- script.js dosyasını bağlama -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

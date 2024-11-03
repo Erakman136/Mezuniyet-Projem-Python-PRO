@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonuçlar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sitilim.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sonuçlar</h1>
+        <ul>
+            {% for field, votes in field_votes %}
+                <li>{{ field }}: {{ votes }} oy</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}">Anketi Yeniden Oyla</a>
+    </div>
+</body>
+</html>

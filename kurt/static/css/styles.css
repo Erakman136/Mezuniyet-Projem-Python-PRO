@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  #display {
+    font-size: 5rem;
+    margin: 20px 0;
+  }
+  
+  .buttons button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #startStop {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  #reset {
+    background-color: #f44336;
+    color: white;
+  }
+  

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sitilim.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ data.question }}</h1>
+        <form action="{{ url_for('vote') }}" method="POST">
+            {% for field in data.fields %}
+                <input type="radio" name="language" value="{{ loop.index0 }}" id="option{{ loop.index0 }}">
+                <label for="option{{ loop.index0 }}">{{ field }}</label><br>
+            {% endfor %}
+            <button type="submit">Oy Ver</button>
+        </form>
+    </div>
+</body>
+</html>
